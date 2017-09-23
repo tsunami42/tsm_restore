@@ -20,7 +20,12 @@
 #  name = "github.com/x/y"
 #  version = "2.4.0"
 
+required = ["go.uber.org/zap"]
 
 [[constraint]]
-  branch = "v1.3.5-fix_dep"
   name = "github.com/tsunami42/influxdb"
+  branch = "v1.3.5-fix_dep"
+  
+[[constraint]]
+  name = "go.uber.org/zap"
+  revision = "61159f06afe449fdaafdc8472ba4e09ce6e43336"
