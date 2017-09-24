@@ -26,16 +26,15 @@ var (
 
 func init() {
 	flag.StringVar(&tsmPath, "p", "a.tsm", "path for tsm file")
-	flag.BoolVar(&compress, "c", false, "Compress the output")
+	flag.BoolVar(&compress, "c", false, "Compress the output in gzip")
 	flag.StringVar(&db, "db", "telegraf", "Database of tsm file")
 	flag.StringVar(&rp, "rp", "default", "RP of tsm file")
-	flag.IntVar(&limit, "l", 100, "read key limit")
+	flag.IntVar(&limit, "l", 100, "Limit keys to be read from index")
 }
 
 func main() {
 	flag.Parse()
 
-	log.Println(tsmPath)
 	if err := write(); err != nil {
 		log.Fatal(err)
 	}
